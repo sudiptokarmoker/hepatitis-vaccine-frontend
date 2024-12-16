@@ -1,5 +1,8 @@
 # Hepatitis vaccine managment
 
-**for admin user logged in:**
+# url: https://vaccine-frontend.deniber.com/
+
+# for admin user logged in:
 email: vaccinesuperadmin@test.email
 password: password
+
