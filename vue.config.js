@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: '/var/www/html/vaccine/frontend/dist/',
+    publicPath: '/dist/',
     outputDir: 'dist',
     assetsDir: 'static',
 };
