@@ -1,0 +1,40 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name vaccine-frontend.deniber.com www.vaccine-frontend.deniber.com;
+    return 302 https://$server_name$request_uri;
+}
+
+server {
+    # SSL configuration
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    ssl_certificate         /etc/ssl/deniber-crt.pem;
+    ssl_certificate_key     /etc/ssl/deniber-private-key.pem;
+
+    server_name vaccine-frontend.deniber.com www.vaccine-frontend.deniber.com;
+
+    root /var/www/html/vaccine/frontend/dist;
+
+    index index.html;
+
+    
+    location / {
+      try_files $uri $uri/ =404;
+    }
+      
+
+    # Prevent access to hidden files
+    location ~ /\. {
+        deny all;
+    }
+
+    # Prevent access to non-public files
+    location ~ ^/(\.git|node_modules|env|.*\.lock) {
+        deny all;
+    }
+
+    error_log  /var/log/nginx/vue-app-error.log;
+    access_log /var/log/nginx/vue-app-access.log;
+}

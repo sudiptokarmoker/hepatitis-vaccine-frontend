@@ -7,6 +7,8 @@ import Dashboard from "../views/Dashboard.vue";
 import Search from "../views/Search.vue";
 import Success from "../views/Success.vue";
 import UserLists from "../views/Users.vue";
+import CenterCreate from "../views/CenterCreate.vue";
+import CenterLists from "../views/CenterLists.vue";
 
 Vue.use(VueRouter);
 
@@ -48,6 +50,19 @@ const routes = [
     path: "/user_list",
     name: "Lists",
     component: UserLists
+  },
+  //CenterCreate
+  {
+    path: "/center-create",
+    name: "CenterCreate",
+    component: CenterCreate,
+    meta: { authOnly: true }
+  },
+  {
+    path: "/center-lists",
+    name: "CenterLists",
+    component: CenterLists,
+    meta: { authOnly: true }
   }
 ];
 

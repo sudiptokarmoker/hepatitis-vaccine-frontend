@@ -7,6 +7,7 @@
 
 <script>
 import Navigation from "@/components/Navigation.vue";
+//import 'ant-design-vue/dist/antd.css';
 
 export default {
   components: {

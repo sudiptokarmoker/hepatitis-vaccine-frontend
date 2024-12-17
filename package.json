@@ -8,12 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ant-design-vue": "^4.2.6",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.1",
     "popper.js": "^1.16.1",
+    "v-calendar": "^2.4.2",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5"
   },

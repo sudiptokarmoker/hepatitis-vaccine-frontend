@@ -47,5 +47,34 @@ export default {
 
   getCenters() {
     return Api.get("/api/vaccine/available-vaccination-center");
-  }
+  },
+
+  // Add this method for form data submission
+  async submitCenterData(form) {
+    const token = localStorage.getItem("token"); // Example: Get the token from localStorage
+
+    return Api.post("/api/vaccine/vaccination-center", form, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
+    });
+
+    //await Csrf.getCookie();
+    //return Api.post("/api/vaccine/vaccination-center", form);
+  },
+
+  async getCenterList() {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await Api.get("/api/vaccine/vaccination-center-lists", {
+        headers: {
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+        },
+      });
+      return response.data; // Assuming the API returns an array of data
+    } catch (error) {
+      console.error("Error fetching center list:", error);
+      throw error; // Rethrow error so it can be handled by the caller
+    }
+  },
 };

@@ -1,6 +1,28 @@
 <template>
   <div>
+
     <h1>User List</h1>
+    <!-- navigation start -->
+    <div>
+      <nav class="navbar navbar-expand">
+          <ul class="nav navbar-nav">
+            <nav class="navbar navbar-expand">
+              <router-link class="nav-item nav-link" :to="{ name: 'CenterCreate' }">
+                Center Create
+              </router-link>
+
+              <router-link
+                class="nav-item nav-link"
+                :to="{ name: 'CenterLists' }"
+              >
+              Center Lists
+            </router-link>
+            
+            </nav>
+          </ul>
+    </nav>
+    </div>
+    <!-- navigation end -->
     <table>
       <thead>
         <tr>
@@ -8,6 +30,7 @@
           <th>Email</th>
           <th>Nid</th>
           <th>Status</th>
+          <th>Schedule Date</th>
           <th>Center Name</th>
         </tr>
       </thead>
@@ -17,6 +40,7 @@
           <td>{{ user.user_email }}</td>
           <td>{{ user.nid }}</td>
           <td>{{ user.status }}</td>
+          <td>{{ user.vaccine_scheduled_date }}</td>
           <td>{{ user.center_name }}</td>
         </tr>
       </tbody>
