@@ -14,7 +14,7 @@
         <tr v-for="record in data" :key="record.id">
           <td>{{ record.center_id }}</td>
           <td>{{ record.center_name }}</td>
-          <td>{{ record.scheduled_date }}</td>
+          <td>{{ record.vaccine_scheduled_date }}</td>
           <td>{{ record.capacity_limit }}</td>
           <!-- <td><button @click="handleEdit(record.id)">Edit</button></td> -->
         </tr>
