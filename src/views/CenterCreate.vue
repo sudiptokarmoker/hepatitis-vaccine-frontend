@@ -70,9 +70,10 @@
 
 <script>
 //import User from "../apis/User";
-import Api from "../apis/User"; // Import Api module
+//import Api from "../apis/User"; // Import Api module
+import User from "../apis/User";
 
-import VCalendar from 'v-calendar';
+import VCalendar from './../../node_modules/v-calendar';
 
 export default {
   components: {
@@ -101,7 +102,7 @@ export default {
     this.responseMessage = ""; // Reset the response message
 
     try {
-        const response = await Api.submitCenterData(this.formData); // Await the API call
+        const response = await User.submitCenterData(this.formData); // Await the API call
 
         console.log(response);
 

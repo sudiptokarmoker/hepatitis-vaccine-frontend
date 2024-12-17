@@ -24,7 +24,9 @@
 </template>
 
 <script>
-import Api from "../apis/User"; // Import Api module
+//import Api from "../apis/User"; // Import Api module
+//import Api from "../apis/User";
+import User from "../apis/User";
 
 export default {
   data() {
@@ -39,7 +41,7 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const centers = await Api.getCenterList(); // Using your Api service
+        const centers = await User.getCenterList(); // Using your Api service
         console.log(centers);
         this.data = centers.data; // Set the data to be displayed in the table
       } catch (error) {
