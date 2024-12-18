@@ -10,6 +10,17 @@ export default {
     //auth/register
   },
 
+  async registerUserFromUser(form) {
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+  
+    // Make the API call to log out
+    await Api.post("/api/vaccine/auth/register-vaccine-user", form, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
+    });
+  },
+
   async login(form) {
     await Csrf.getCookie();
 

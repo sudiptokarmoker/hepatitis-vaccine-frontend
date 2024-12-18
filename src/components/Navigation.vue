@@ -33,6 +33,15 @@
         >
           Dashboard
         </router-link>
+
+        <router-link
+          v-if="isLoggedIn"
+          class="nav-item nav-link"
+          :to="{ name: 'RegisterUser' }"
+        >
+          Registration for Vaccine
+        </router-link>
+
         <a
           class="nav-item nav-link"
           v-if="isLoggedIn"

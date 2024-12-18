@@ -38,7 +38,13 @@
 
     <div v-else-if="searchQuery.trim()" class="no-results">
       <p>No results found.</p>
-      <a href="/register" class="register-link">Register Here</a>
+      <!-- <a href="/register" class="register-link">Register Here</a> -->
+       <a 
+        :href="isLoggedIn ? '/register-user' : '/register'" 
+        class="register-link"
+        >
+    Register Here
+  </a>
     </div>
     
   </div>
@@ -55,7 +61,13 @@ export default {
     return {
       searchQuery: '', // Store the search input value
       results: [], // Store the search results
+
+      isLoggedIn: false
     };
+  },
+  created() {
+    // Check if the user is logged in when the component is created
+    this.isLoggedIn = !!localStorage.getItem("auth");
   },
   methods: {
     async onSearch() {
